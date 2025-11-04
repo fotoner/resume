@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>남현재 - 이력서</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background: #fff;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      header {
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+      }
+      .top-section {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 3px solid #7e6ca8;
+      }
+
+      .header-content {
+        flex: 1;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: #000;
+      }
+
+      header .subtitle {
+        font-size: 1.1em;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .contact-info {
+        margin-top: 20px;
+        font-size: 0.95em;
+        color: #666;
+      }
+
+      .contact-info a {
+        color: #333;
+        text-decoration: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .contact-info a:hover {
+        border-bottom-color: #333;
+      }
+
+      .contact-info .separator {
+        margin: 0 8px;
+        color: #ddd;
+      }
+
+      /* 본문 내 일반 링크 스타일 */
+      a {
+        color: #7e6ca8;
+        text-decoration: none;
+        border-bottom: 1px solid #7e6ca8;
+      }
+
+      a:hover {
+        color: #5e4c88;
+        border-bottom-color: #5e4c88;
+      }
+
+      .intro-text {
+        margin-top: 25px;
+        line-height: 1.9;
+        color: #555;
+        font-size: 0.98em;
+      }
+
+      section {
+        margin-bottom: 36px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 25px;
+        font-weight: 700;
+        color: #000;
+        border-bottom: 2px solid #000;
+        padding-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 1.15em;
+        color: #000;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      h4 {
+        font-size: 1em;
+        color: #333;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 10px;
+        color: #555;
+        line-height: 1.7;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding-left: 40px;
+      }
+
+      li {
+        margin-bottom: 8px;
+        color: #555;
+        line-height: 1.7;
+        padding-left: 10px;
+      }
+
+      .intro-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .intro-list li {
+        padding-left: 15px;
+        position: relative;
+      }
+
+      .intro-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #333;
+      }
+
+      .work-item {
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .work-item:last-child {
+        border-bottom: none;
+      }
+
+      .work-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 5px;
+      }
+
+      .highlight {
+        background: linear-gradient(
+          transparent 60%,
+          rgba(126, 108, 168, 0.2) 60%
+        );
+        font-weight: 600;
+        color: #000;
+      }
+
+      .metric {
+        font-weight: 600;
+        color: #7e6ca8;
+      }
+
+      .work-title {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #000;
+      }
+
+      .work-title a {
+        color: #7e6ca8;
+        text-decoration: none;
+        border-bottom: 1px solid #7e6ca8;
+      }
+
+      .work-title a:hover {
+        color: #5e4c88;
+        border-bottom-color: #5e4c88;
+      }
+
+      .work-period {
+        color: #999;
+        font-size: 0.9em;
+        white-space: nowrap;
+      }
+
+      .work-role {
+        color: #666;
+        font-size: 0.95em;
+        margin-bottom: 8px;
+      }
+
+      .work-description {
+        color: #555;
+        line-height: 1.7;
+        margin-top: 5px;
+      }
+
+      .work-description ul {
+        margin-top: 8px;
+      }
+
+      .tech-stack {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tech-tag {
+        display: inline-block;
+        padding: 1px 2px;
+        background: #f0ecf5;
+        color: #7e6ca8;
+        border-radius: 4px;
+        font-size: 0.75em;
+        font-weight: 500;
+        border: 1px solid #d4c9e0;
+      }
+
+      .stack-label {
+        font-weight: 600;
+        color: #333;
+        margin-right: 8px;
+        font-size: 0.9em;
+      }
+
+      .project-meta {
+        margin-top: 5px;
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      .section-intro {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 25px;
+        font-size: 0.95em;
+      }
+
+      .skill-group {
+        margin-bottom: 20px;
+      }
+
+      .skill-group h4 {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+
+      .education-cert {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+
+      .education-cert > div {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .education-cert h3 {
+        margin-bottom: 8px;
+      }
+
+      .cert-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .cert-list li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+
+      .cert-name {
+        color: #333;
+      }
+
+      .cert-date {
+        color: #999;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        body {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px 15px;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .profile-image {
+          width: 150px;
+          height: 150px;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .work-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .work-period {
+          margin-top: 4px;
+        }
+
+        .education-cert {
+          flex-direction: column;
+          gap: 30px;
+        }
+      }
+
+      a {
+        color: #333;
+      }
+
+      strong {
+        font-weight: 600;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="top-section">
+          <img src="pic.png" alt="남현재 프로필 사진" class="profile-image" />
+          <div class="header-content">
+            <h1>남현재 - Nam Hyeonjae</h1>
+            <div class="subtitle">Web Full-stack Developer</div>
+            <div class="contact-info">
+              <span>jaemuon5582@gmail.com</span>
+              <span class="separator">|</span>
+              <span>010-4085-4426</span>
+              <span class="separator">|</span>
+              <a href="https://github.com/fotoner" target="_blank"
+                >GitHub - github.com/fotoner</a
+              >
+              <span class="separator">|</span>
+              <a
+                href="https://www.acmicpc.net/user/million_theater"
+                target="_blank"
+                >BOJ - million_theater</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="intro-text">
+          <p>
+            하루 700만 요청을 처리하는 공군 인트라넷에서 쿼리 최적화로
+            응답시간을 80% 줄였습니다. 스타트업에서는 레이블 없는 5만 데이터를
+            k-means 클러스터링으로 분류 자동화했습니다. 특정 개발 도메인에
+            한정되지 않고 필요에 따른 영역의 문제를 접근합니다.
+          </p>
+
+          <p>
+            완벽한 설계보다 빠른 검증을, 직관보다 데이터를 선택합니다.
+            공군에서는 로그 분석과 쿼리 실행 계획으로 병목을 찾아 개선했고,
+            소프트웨어 마에스트로 과정에서는 빠른 MVP 배포 후 사용자 피드백을
+            받으며 점진적으로 서비스를 개선했습니다.
+          </p>
+
+          <p>
+            혼자보다 팀이 함께 나아가는 것을 중요하게 생각합니다. 공군에서
+            체계단 최초 React 프로젝트를 도입할 때 코드 컨벤션을 정립했고, Edge
+            IE 호환모드 제거로 발생한 CORS 이슈는 각 서비스 담당자들에게 전환
+            가이드를 제공하며 해결했습니다.
+          </p>
+
+          <p>
+            현재는 소프트웨어 마에스트로 16기에서 팀장으로 3명 팀을 이끌며 AI
+            음성 대화 기반 일본어 학습 서비스를 개발하고 있습니다. 6개월 만에
+            1,100명의 가입자와 주간 활성 사용자 560명을 확보했습니다. 기술적으로
+            잘 만드는 것만큼, 실제로 사람들이 계속 사용하는 서비스를 만드는 게
+            중요하다고 생각합니다.
+          </p>
+        </div>
+      </header>
+
+      <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="skill-group">
+          <h4 class="highlight">Base</h4>
+          <p>Java, Javascript / Typescript, Python</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 class="highlight">Frontend</h4>
+          <p>
+            React, React-Native(Expo), Zustand, Emotion, Styled-components,
+            ESLint, Prettier, Posthog, GA
+          </p>
+        </div>
+
+        <div class="skill-group">
+          <h4 class="highlight">Backend</h4>
+          <p>
+            Spring Boot, Spring JPA, MyBatis, eGov, FastAPI, Flask, Oracle,
+            Tibero, MySql, Firebase
+          </p>
+        </div>
+
+        <div class="skill-group">
+          <h4 class="highlight">SysOps</h4>
+          <p>Linux (Red Hat, Ubuntu), Nginx, JBoss, Apache</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 class="highlight">Cooperation</h4>
+          <p>Git, Notion, Zeplin, Figma, Slack</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Work Experience</h2>
+        <p class="section-intro">
+          대규모 시스템 운영부터 스타트업까지, 다양한 환경에서 문제를 해결한
+          경험이 있습니다.
+        </p>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">대한민국 공군</div>
+            <div class="work-period">2022.06 - 2025.05</div>
+          </div>
+          <div class="work-role">
+            인트라넷 서비스 개발 및 포털 운영 · 학사장교, 중위 전역
+          </div>
+
+          <div class="work-description">
+            <h4 style="margin-top: 15px; margin-bottom: 10px">
+              정보체계관리단 - 인트라넷포털운영담당 (2024.01 ~ 2025.05)
+            </h4>
+            <div class="tech-stack">
+              <span class="tech-tag">Spring 3.2</span>
+              <span class="tech-tag">MyBatis</span>
+              <span class="tech-tag">Oracle</span>
+              <span class="tech-tag">Apache Struts</span>
+              <span class="tech-tag">Java 1.6</span>
+            </div>
+            <ul>
+              <li>
+                <span class="highlight">하루 최대 700만 건의 요청</span>이
+                발생하는 <span class="highlight">6만 공군인</span> 전체가
+                사용하는 공군 통합인트라넷포털 운영 및 유지보수
+              </li>
+              <li>
+                어드민 권한 처리 쿼리 최적화로 서비스 성능 향상 (<span
+                  class="highlight"
+                  >평균 800ms → 160ms 대로 개선, P90 기준 80% 개선</span
+                >)
+              </li>
+              <li>
+                Oracle 서버 이관 후
+                <strong class="highlight">DBCP Full 장애 해결</strong> →
+                Hugepage 설정 최적화로 Hang 현상 해소
+              </li>
+              <li>
+                온나라2.0 서비스(전자결재시스템) 전환에 따른 구 조직도 배치 cron
+                수정 및 테스트, SSO 세션 처리 파트 수정
+              </li>
+              <li>
+                Edge 내 IE 호환모드 제거에 따른 CORS 문제 인식 및 포털 연동
+                서비스 담당자들에 대한 전환 안내 및 지원
+              </li>
+              <li>팀 내 취약점 개선 업무, 침해 및 장애 대응(훈련/실제) 주도</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; margin-bottom: 10px">
+              인터넷 복지시설예약체계 개발 (FE)
+            </h4>
+            <div class="tech-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Zustand</span>
+              <span class="tech-tag">Styled-components</span>
+              <span class="tech-tag">Vite</span>
+            </div>
+            <ul>
+              <li>
+                공군호텔, 그린나래호텔, 체력단련시설에 대한 레거시 예약 관리
+                서비스 재개발
+              </li>
+              <li>
+                초기 프론트엔드 프로젝트 구성 및
+                <strong class="highlight"
+                  >공군 체계단 최초 React 기반 웹 서비스 구성 도입</strong
+                >
+              </li>
+              <li>
+                주요 게시판 관리 기능 및 유저 관련 백오피스 관리 기능 담당
+              </li>
+              <li>
+                ESLint, Prettier를 활용한 코드컨벤션 구성을 통해 팀 내 코드 품질
+                향상 및 개발문화 개선
+              </li>
+              <li>GitLab으로 이슈 관리 및 Git-Flow 기반 협업 체계 구축</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; margin-bottom: 10px">
+              인트라넷 비상홈페이지 재개발 (BE)
+            </h4>
+            <div class="tech-stack">
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Spring Security</span>
+            </div>
+            <ul>
+              <li>포털 장애 시 출력되는 비상홈페이지 레거시 개선</li>
+              <li>
+                온나라 서비스(전자결재시스템)에 Monolithic하게 탑재된 서비스를
+                MSA 아키텍처로 전환하여 분리
+              </li>
+            </ul>
+
+            <h4 style="margin-top: 20px; margin-bottom: 10px">
+              공군군수사령부 - 인트라넷개발담당 (2022.06 ~ 2023.12)
+            </h4>
+            <div class="tech-stack">
+              <span class="tech-tag">eGov</span>
+              <span class="tech-tag">Tibero</span>
+              <span class="tech-tag">JQuery</span>
+            </div>
+            <ul>
+              <li>
+                공군군수사령부에서 군수관리 인트라넷 웹 서비스 개발 및 유지보수
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">아이코코</div>
+            <div class="work-period">2020.11 - 2021.05</div>
+          </div>
+          <div class="work-role">소프트웨어 엔지니어</div>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">KoNLPy</span>
+            <span class="tech-tag">Tensorflow</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">firebase(auth, store, storage)</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Redux-Hooks</span>
+            <span class="tech-tag">Selenium</span>
+            <span class="tech-tag">BeautifulSoup</span>
+          </div>
+          <div class="work-description">
+            <p>
+              산후도우미 매칭 플랫폼을 개발하는 시리즈 A 스타트업 (대구 소재)
+            </p>
+            <ul>
+              <li>
+                후기 데이터 수집 및 분류 자동화:
+                <span class="highlight"
+                  >5만 건의 산후도우미 관련 게시글 수집</span
+                >
+                및 k-means 클러스터링을 통한
+                <strong>후기/비후기 자동 분류</strong> (후기 비율 약 40%)
+              </li>
+              <li>
+                자회사 파견 서비스 랜딩페이지 및 백오피스 개발, firebase 기반
+                호스팅 환경 구축 -
+                <a href="https://dear.care/" target="_blank">링크</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">필로우 스튜디오</div>
+            <div class="work-period">2019.02 - 2019.07</div>
+          </div>
+          <div class="work-role">소프트웨어 엔지니어</div>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Nginx</span>
+          </div>
+          <div class="work-description">
+            <p>
+              자연어 처리 기반 SI 프로젝트 회사에서 웹 백엔드 개발 및 서버 운영
+              담당
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">
+              <a href="https://landing.kanata.live/" target="_blank"
+                >서브컬쳐 기반 일본어 회화 서비스 - 카나타</a
+              >
+            </div>
+            <div class="work-period">2025.06 - 2025.12</div>
+          </div>
+          <div class="project-meta">
+            소프트웨어 마에스트로 16기 프로젝트 · 3인 개발, 프론트엔드 파트 담당
+            및 팀장 역할
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">React Native(Expo)</span>
+            <span class="tech-tag">Emotion</span>
+            <span class="tech-tag">Zustand</span>
+            <span class="tech-tag">React Query</span>
+            <span class="tech-tag">TSyringe</span>
+            <span class="tech-tag">Livekit Client</span>
+            <span class="tech-tag">Live2D</span>
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">Posthog</span>
+          </div>
+          <div class="work-description">
+            <ul>
+              <li>
+                AI 캐릭터 음성 대화 서비스 구현으로 일본어 학습자 타겟 서비스
+                구축 (<span class="highlight">가입자 1,100명, 평균 WAU 560</span
+                >)
+              </li>
+              <li>
+                <strong>LiveKit 기반 WebRTC 음성 채팅</strong> 및 통합 메시지
+                처리 로직 구현,
+                <strong>Live2D 캐릭터 실시간 립싱크 및 감정 표현 연동</strong>
+              </li>
+              <li>
+                Live2D 기기별 텍스처 다운스케일링 및 싱글톤 패턴 적용으로
+                <strong>모바일 환경 메모리 최적화</strong>, MVVM 패턴 도입으로
+                컴포넌트 별 책임 분리를 통한 코드 구조 설계
+              </li>
+
+              <li>
+                Posthog 및 GA를 활용한 이벤트 로깅 및 분석 시스템 구축을 통한
+                유입 경로 추적에 따른 바이럴 수행
+              </li>
+              <li>
+                Web / Native 환경별 형태소 분석 라이브러리 적용 및 형태소 분석
+                로직 구현
+              </li>
+              <li>
+                전체 서비스 Figma 활용 디자인 수행 및 Storybook 기반 디자인
+                시스템 구축
+              </li>
+              <li>
+                그 외 Live2D 캐릭터 모델 외주 업무 연락 및 주요 소통 채널 관리
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">
+              오프라인 행사 참여자 대상 바이럴 서비스 - 오타쿠붐박스
+              오픈테마보드
+            </div>
+            <div class="work-period">2025.05 - 2025.06</div>
+          </div>
+          <div class="project-meta">개인 프로젝트 · 1인 단독 개발</div>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Docker compose</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">NGINX</span>
+          </div>
+          <div class="work-description">
+            <ul>
+              <li>
+                오프라인 행사 참여 유도를 위한 투표 바이럴 서비스 풀스택
+                개발(<span class="highlight"
+                  >이벤트 기간 페이지 조회수 1,231회, 최대 WAU 170</span
+                >)
+              </li>
+              <li>
+                <strong>OAuth 2.0 PKCE 기반 Twitter 소셜 로그인</strong> 및
+                Docker Compose 멀티 컨테이너 배포 환경 구축
+              </li>
+              <li>
+                테마 제출 및 SNS 공유 연동 바이럴 유도,
+                <span class="highlight"
+                  >오프라인 참석자 4배 증가 (11명 → 41명, SNS 노출 조회수 약
+                  17,000회)</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">law-farm</div>
+            <div class="work-period">2021.03 - 2021.12</div>
+          </div>
+          <div class="project-meta">
+            졸업 프로젝트 · 프로젝트 리더, 백엔드 및 프론트엔드 담당
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Gensim</span>
+            <span class="tech-tag">KoNLPy</span>
+          </div>
+          <div class="work-description">
+            Word2Vec 임베딩 기반 법률 정보 추천 시스템
+          </div>
+        </div>
+      </section>
+
+      <section id="awards">
+        <h2>ETC</h2>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">전군 사이버작전 전문 교육 최우수 수료</div>
+            <div class="work-period">2023.06</div>
+          </div>
+          <div class="work-description">
+            사이버작전사령부에서 주관한 CVE 기반 취약점 대응 및 시큐어 코딩
+            교육으로 과정 최우수로 수료
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">
+              NH 투자증권 빅데이터 경진대회 본선 진출
+            </div>
+            <div class="work-period">2020.11 - 2021.01</div>
+          </div>
+          <div class="work-description">
+            <ul>
+              <li>
+                진짜 뉴스와 가짜(상업성) 뉴스 판별 모델 개발, GPU 효율성을 위해
+                LSTM 대신 Conv1D 활용
+              </li>
+              <li>총 192개 팀 중 본선 진출 44개 팀 선정</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">
+              SW중심대학 대경권 프로그래밍경진대회 장려상
+            </div>
+            <div class="work-period">2020.05</div>
+          </div>
+          <div class="work-description">
+            대구경북권 내의 SW 중심대학에서 주최한 PS 대회에서 본선 진출 후
+            상위권 입상
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">
+              SW중심대학 대경권 프로그래밍경진대회 장려상
+            </div>
+            <div class="work-period">2019.05</div>
+          </div>
+          <div class="work-description">
+            대구경북권 내의 SW 중심대학에서 주최한 PS 대회에서 본선 진출 후
+            상위권 입상
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">2018 KNU 창업동아리</div>
+            <div class="work-period">2018.03 - 2018.10</div>
+          </div>
+          <div class="work-description">
+            TextRank 기반 논문 요약 서비스를 기획 및 개발, 5명 규모의
+            창업동아리에 참여
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education & Certifications</h2>
+        <div class="education-cert">
+          <div>
+            <h3>경북대학교 소프트웨어학과</h3>
+            <p>2017.02 - 2022.02 (졸업)</p>
+            <p>GPA: 3.98 / 4.3</p>
+          </div>
+          <div>
+            <h3>자격 및 활동</h3>
+            <ul class="cert-list">
+              <li>
+                <span class="cert-name">소프트웨어 마에스트로 16기</span>
+                <span class="cert-date">2025.06 - 2025.12</span>
+              </li>
+              <li>
+                <span class="cert-name">SQLD</span>
+                <span class="cert-date">2024.09</span>
+              </li>
+              <li>
+                <span class="cert-name">정보처리기사</span>
+                <span class="cert-date">2020.12</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
