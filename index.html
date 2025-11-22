@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>남현재 - 이력서</title>
+    <title>남현재 - Resume</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
     <style>
+      :root {
+        --primary: #4f46e5; /* Indigo 600 - Vibrant for screen */
+        --primary-dark: #3730a3; /* Indigo 800 */
+        --text-main: #1e293b; /* Slate 800 */
+        --text-sub: #475569; /* Slate 600 */
+        --text-muted: #94a3b8; /* Slate 400 */
+        --bg-body: #f1f5f9; /* Slate 100 */
+        --bg-sheet: #ffffff;
+        --bg-tag: #e0e7ff; /* Indigo 100 */
+        --border: #e2e8f0;
+        --shadow-sheet: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -12,388 +32,412 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-          "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-        line-height: 1.8;
-        color: #333;
-        background: #fff;
+        font-family: "Pretendard Variable", Pretendard, -apple-system,
+          BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+          "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        line-height: 1.65;
+        color: var(--text-sub);
+        background: var(--bg-body);
+        -webkit-font-smoothing: antialiased;
         padding: 40px 20px;
       }
 
-      .container {
-        max-width: 800px;
+      /* The "Digital Paper" Container */
+      .resume-sheet {
+        background: var(--bg-sheet);
+        max-width: 210mm; /* A4 Width */
+        min-height: 297mm; /* A4 Height */
         margin: 0 auto;
+        padding: 60px;
+        box-shadow: var(--shadow-sheet);
+        position: relative;
       }
 
+      /* Header */
       header {
         margin-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        align-items: flex-start;
-      }
-      .top-section {
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
       }
 
-      .profile-image {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        object-fit: cover;
-        flex-shrink: 0;
-        border: 3px solid #7e6ca8;
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 30px;
       }
 
       .header-content {
         flex: 1;
       }
 
-      header h1 {
-        font-size: 2.5em;
+      h1 {
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--text-main);
+        line-height: 1.1;
         margin-bottom: 8px;
-        font-weight: 700;
-        color: #000;
+        letter-spacing: -0.03em;
       }
 
-      header .subtitle {
-        font-size: 1.1em;
-        color: #666;
-        margin-bottom: 5px;
+      .subtitle {
+        font-size: 1.25rem;
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 20px;
       }
 
       .contact-info {
-        margin-top: 20px;
-        font-size: 0.95em;
-        color: #666;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        font-size: 0.95rem;
+        color: var(--text-sub);
       }
 
-      .contact-info a {
-        color: #333;
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .contact-item a {
+        color: var(--text-sub);
         text-decoration: none;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid transparent;
+        transition: all 0.2s;
       }
 
-      .contact-info a:hover {
-        border-bottom-color: #333;
+      .contact-item a:hover {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
       }
 
-      .contact-info .separator {
-        margin: 0 8px;
-        color: #ddd;
-      }
-
-      /* 본문 내 일반 링크 스타일 */
-      a {
-        color: #7e6ca8;
-        text-decoration: none;
-        border-bottom: 1px solid #7e6ca8;
-      }
-
-      a:hover {
-        color: #5e4c88;
-        border-bottom-color: #5e4c88;
+      .profile-image {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
       }
 
       .intro-text {
-        margin-top: 25px;
-        line-height: 1.9;
-        color: #555;
-        font-size: 0.98em;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-main);
+        opacity: 0.9;
       }
 
+      .intro-text p {
+        margin-bottom: 12px;
+      }
+
+      /* Sections */
       section {
-        margin-bottom: 36px;
+        margin-bottom: 50px;
       }
 
       h2 {
-        font-size: 1.5em;
-        margin-bottom: 25px;
-        font-weight: 700;
-        color: #000;
-        border-bottom: 2px solid #000;
-        padding-bottom: 8px;
-      }
-
-      h3 {
-        font-size: 1.15em;
-        color: #000;
-        margin-bottom: 5px;
-        font-weight: 600;
-      }
-
-      h4 {
-        font-size: 1em;
-        color: #333;
-        margin-bottom: 8px;
-        font-weight: 600;
-      }
-
-      p {
-        margin-bottom: 10px;
-        color: #555;
-        line-height: 1.7;
-      }
-
-      ul {
-        margin: 10px 0;
-        padding-left: 40px;
-      }
-
-      li {
-        margin-bottom: 8px;
-        color: #555;
-        line-height: 1.7;
-        padding-left: 10px;
-      }
-
-      .intro-list {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .intro-list li {
-        padding-left: 15px;
-        position: relative;
-      }
-
-      .intro-list li:before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #333;
-      }
-
-      .work-item {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-main);
         margin-bottom: 24px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #eee;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
 
-      .work-item:last-child {
-        border-bottom: none;
+      h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* Work Items */
+      .work-item {
+        margin-bottom: 40px;
+        page-break-inside: avoid; /* Default: keep items together */
+      }
+
+      .work-item.allow-break {
+        page-break-inside: auto; /* Exception for long items */
       }
 
       .work-header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 5px;
-      }
-
-      .highlight {
-        background: linear-gradient(
-          transparent 60%,
-          rgba(126, 108, 168, 0.2) 60%
-        );
-        font-weight: 600;
-        color: #000;
-      }
-
-      .metric {
-        font-weight: 600;
-        color: #7e6ca8;
+        margin-bottom: 6px;
+        flex-wrap: wrap;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Try to keep header with content */
       }
 
       .work-title {
-        font-size: 1.1em;
-        font-weight: 600;
-        color: #000;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--text-main);
       }
 
       .work-title a {
-        color: #7e6ca8;
+        color: inherit;
         text-decoration: none;
-        border-bottom: 1px solid #7e6ca8;
+        transition: color 0.2s;
       }
 
       .work-title a:hover {
-        color: #5e4c88;
-        border-bottom-color: #5e4c88;
+        color: var(--primary);
       }
 
       .work-period {
-        color: #999;
-        font-size: 0.9em;
-        white-space: nowrap;
+        font-size: 1rem;
+        color: var(--text-sub);
+        font-weight: 500;
+        font-feature-settings: "tnum";
       }
 
       .work-role {
-        color: #666;
-        font-size: 0.95em;
+        font-size: 1.05rem;
+        color: var(--primary-dark);
+        font-weight: 600;
+        margin-bottom: 12px;
+        page-break-after: avoid;
+      }
+
+      .sub-project {
+        margin-top: 24px;
+        padding-left: 20px;
+        border-left: 3px solid var(--border);
+        page-break-inside: avoid; /* Keep sub-project content together */
+        break-inside: avoid;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-main);
         margin-bottom: 8px;
       }
 
-      .work-description {
-        color: #555;
-        line-height: 1.7;
-        margin-top: 5px;
-      }
-
-      .work-description ul {
-        margin-top: 8px;
-      }
-
+      /* Tech Stack */
       .tech-stack {
-        margin-top: 12px;
-        margin-bottom: 12px;
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
+        margin-bottom: 14px;
       }
 
       .tech-tag {
-        display: inline-block;
-        padding: 1px 2px;
-        background: #f0ecf5;
-        color: #7e6ca8;
-        border-radius: 4px;
-        font-size: 0.75em;
-        font-weight: 500;
-        border: 1px solid #d4c9e0;
-      }
-
-      .stack-label {
+        font-size: 0.8rem;
         font-weight: 600;
-        color: #333;
-        margin-right: 8px;
-        font-size: 0.9em;
+        color: var(--primary-dark);
+        background: var(--bg-tag);
+        padding: 3px 10px;
+        border-radius: 12px;
+        transition: all 0.2s;
       }
 
-      .project-meta {
-        margin-top: 5px;
-        font-size: 0.9em;
-        color: #666;
-      }
-
-      .section-intro {
-        color: #666;
-        font-style: italic;
-        margin-bottom: 25px;
-        font-size: 0.95em;
-      }
-
-      .skill-group {
-        margin-bottom: 20px;
-      }
-
-      .skill-group h4 {
-        display: inline-block;
-        margin-bottom: 5px;
-      }
-
-      .education-cert {
-        display: flex;
-        gap: 60px;
-        flex-wrap: wrap;
-      }
-
-      .education-cert > div {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .education-cert h3 {
-        margin-bottom: 8px;
-      }
-
-      .cert-list {
+      /* Lists */
+      ul {
         list-style: none;
         padding-left: 0;
       }
 
-      .cert-list li {
-        display: flex;
-        justify-content: space-between;
+      li {
+        position: relative;
+        padding-left: 18px;
         margin-bottom: 6px;
+        color: var(--text-sub);
       }
 
-      .cert-name {
-        color: #333;
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
       }
 
-      .cert-date {
-        color: #999;
-        font-size: 0.9em;
+      li a {
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(79, 70, 229, 0.3); /* Subtle underline */
+        transition: all 0.2s;
       }
 
+      li a:hover {
+        color: var(--primary-dark);
+        border-bottom-color: var(--primary-dark);
+        background: rgba(79, 70, 229, 0.05);
+      }
+
+      .highlight {
+        font-weight: 600;
+        color: var(--text-main);
+        background: linear-gradient(120deg, transparent 5%, #e0e7ff 5%);
+      }
+
+      strong {
+        font-weight: 700;
+        color: var(--text-main);
+      }
+
+      /* Grid Layout for ETC & Education */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .grid-item h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 16px;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 8px;
+      }
+
+      .list-item {
+        margin-bottom: 16px;
+      }
+
+      .list-title {
+        font-weight: 700;
+        color: var(--text-main);
+        display: block;
+      }
+
+      .list-meta {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      .list-desc {
+        font-size: 0.95rem;
+        color: var(--text-sub);
+        margin-top: 4px;
+      }
+
+      /* Print Optimization */
       @media print {
         body {
-          padding: 20px;
+          background: white;
+          padding: 0;
+        }
+
+        .resume-sheet {
+          box-shadow: none;
+          margin: 0;
+          padding: 0; /* Let the printer handle margins or set minimal */
+          max-width: 100%;
+          min-height: auto;
+        }
+
+        .tech-tag {
+          background: white;
+          border: 1px solid #cbd5e1;
+          color: #334155;
+        }
+
+        .highlight {
+          background: none;
+          text-decoration: underline;
+          text-decoration-color: #cbd5e1;
+        }
+
+        a {
+          text-decoration: none;
+          color: var(--text-main);
+        }
+
+        /* Ensure links are black in print */
+        .work-title a,
+        .contact-item a {
+          color: var(--text-main);
+        }
+
+        /* Page numbers in footer */
+        @page {
+          @bottom-right {
+            content: counter(page) " / " counter(pages);
+            font-size: 10pt;
+            color: #666;
+          }
         }
       }
 
+      /* Mobile */
       @media (max-width: 768px) {
         body {
-          padding: 20px 15px;
+          padding: 0;
+          background: white;
         }
 
-        header {
-          flex-direction: column;
-          align-items: center;
+        .resume-sheet {
+          box-shadow: none;
+          padding: 20px;
         }
 
-        .profile-image {
-          width: 150px;
-          height: 150px;
+        .header-container {
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 20px;
         }
 
-        header h1 {
-          font-size: 2em;
+        .contact-info {
+          justify-content: center;
+        }
+
+        .grid-2 {
+          grid-template-columns: 1fr;
+          gap: 30px;
         }
 
         .work-header {
           flex-direction: column;
-          align-items: flex-start;
+          gap: 4px;
         }
-
-        .work-period {
-          margin-top: 4px;
-        }
-
-        .education-cert {
-          flex-direction: column;
-          gap: 30px;
-        }
-      }
-
-      a {
-        color: #333;
-      }
-
-      strong {
-        font-weight: 600;
-        color: #000;
       }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="resume-sheet">
       <header>
-        <div class="top-section">
-          <img src="pic.png" alt="남현재 프로필 사진" class="profile-image" />
+        <div class="header-container">
           <div class="header-content">
-            <h1>남현재 - Nam Hyeonjae</h1>
+            <h1>남현재</h1>
             <div class="subtitle">Product Engineer</div>
+
             <div class="contact-info">
-              <span>jaemuon5582@gmail.com</span>
-              <span class="separator">|</span>
-              <span>010-4085-4426</span>
-              <span class="separator">|</span>
-              <a href="https://github.com/fotoner" target="_blank"
-                >GitHub - github.com/fotoner</a
-              >
-              <span class="separator">|</span>
-              <a
-                href="https://www.acmicpc.net/user/million_theater"
-                target="_blank"
-                >BOJ - million_theater</a
-              >
+              <div class="contact-item">
+                <span>jaemuon5582@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <span>010-4085-4426</span>
+              </div>
+              <div class="contact-item">
+                <a href="https://github.com/fotoner" target="_blank"
+                  >github.com/fotoner</a
+                >
+              </div>
+              <div class="contact-item">
+                <a
+                  href="https://www.acmicpc.net/user/million_theater"
+                  target="_blank"
+                  >BOJ: million_theater</a
+                >
+              </div>
             </div>
           </div>
+          <img src="pic.png" alt="남현재 프로필 사진" class="profile-image" />
         </div>
+
         <div class="intro-text">
           <p>
             하루 700만 요청을 처리하는 공군 인트라넷에서 쿼리 최적화로
@@ -406,12 +450,11 @@
             IE 호환모드 제거로 발생한 CORS 이슈는 각 서비스 담당자들에게 전환
             가이드를 제공하며 해결했습니다.
           </p>
-
           <p>
             현재는 소프트웨어 마에스트로 16기에서 팀장으로 3명의 팀을 이끌며 AI
             음성 대화 기반 일본어 학습 서비스를 개발하고 있습니다. 2개월 만에
-            1,600명의 가입자와 2주간 평균 DAU 100명을 확보했습니다. 기술적으로
-            잘 만드는 것만큼, 실제로 사람들이 계속 사용하는 서비스를 만드는 게
+            1,600명의 가입자와 평균 WAU 560명을 확보했습니다. 기술적으로 잘
+            만드는 것만큼, 실제 사람들이 계속 사용하는 서비스를 만드는 게
             중요하다고 생각합니다.
           </p>
         </div>
@@ -419,12 +462,8 @@
 
       <section id="experience">
         <h2>Work Experience</h2>
-        <p class="section-intro">
-          대규모 시스템 운영부터 스타트업까지, 다양한 환경에서 문제를 해결한
-          경험이 있습니다.
-        </p>
 
-        <div class="work-item">
+        <div class="work-item allow-break">
           <div class="work-header">
             <div class="work-title">대한민국 공군</div>
             <div class="work-period">2022.06 - 2025.05</div>
@@ -433,33 +472,32 @@
             인트라넷 서비스 개발 및 포털 운영 · 학사장교, 중위 전역
           </div>
 
-          <div class="work-description">
-            <h4 style="margin-top: 15px; margin-bottom: 10px">
-              정보체계관리단 - 인트라넷포털운영담당 (2024.01 ~ 2025.05)
-            </h4>
+          <div class="sub-project">
+            <h4>정보체계관리단 - 인트라넷포털운영담당 (2024.01 ~ 2025.05)</h4>
             <div class="tech-stack">
+              <span class="tech-tag">Java 1.6</span>
               <span class="tech-tag">Spring 3.2</span>
               <span class="tech-tag">MyBatis</span>
               <span class="tech-tag">Oracle</span>
               <span class="tech-tag">Apache Struts</span>
-              <span class="tech-tag">Java 1.6</span>
+              <span class="tech-tag">JBoss</span>
             </div>
             <ul>
               <li>
-                <span class="highlight">하루 최대 700만 건의 요청</span>이
-                발생하는 <span class="highlight">6만 공군인</span> 전체가
-                사용하는 공군 통합인트라넷포털 운영 및 유지보수
+                <span class="highlight">하루 700만 건의 요청</span>이 발생하는
+                <span class="highlight">6만 공군인</span> 전체가 사용하는
+                통합인트라넷포털 운영 및 유지보수
               </li>
               <li>
-                어드민 권한 처리 쿼리 최적화로 서비스 성능 향상 (<span
+                어드민 권한 처리 쿼리 최적화로 서비스 성능 개선 (<span
                   class="highlight"
                   >평균 800ms → 160ms 대로 개선, P90 기준 80% 개선</span
                 >)
               </li>
               <li>
                 Oracle 서버 이관 후
-                <strong class="highlight">DBCP Full 장애 해결</strong> →
-                Hugepage 설정 최적화로 Hang 현상 해소
+                <strong>DBCP Full 장애 해결</strong> → Hugepage 설정 최적화로
+                Hang 현상 해소
               </li>
               <li>
                 온나라2.0 서비스(전자결재시스템) 전환에 따른 구 조직도 배치 cron
@@ -469,12 +507,20 @@
                 Edge 내 IE 호환모드 제거에 따른 CORS 문제 인식 및 포털 연동
                 서비스 담당자들에 대한 전환 안내 및 지원
               </li>
-              <li>팀 내 취약점 개선 업무, 침해 및 장애 대응(훈련/실제) 주도</li>
+              <li>
+                팀 내 취약점 개선 업무, 침해/장애 대응 및 후속조치(훈련/실제)
+                주도 -
+                <a
+                  href="http://www.boannews.com/media/view.asp?idx=131847"
+                  target="_blank"
+                  >관련 기사 ↗</a
+                >
+              </li>
             </ul>
+          </div>
 
-            <h4 style="margin-top: 20px; margin-bottom: 10px">
-              인터넷 복지시설예약체계 개발 (FE)
-            </h4>
+          <div class="sub-project">
+            <h4>인터넷 복지시설예약체계 개발 (FE, 2024.03 ~ 2024.12)</h4>
             <div class="tech-stack">
               <span class="tech-tag">React</span>
               <span class="tech-tag">TypeScript</span>
@@ -489,9 +535,7 @@
               </li>
               <li>
                 초기 프론트엔드 프로젝트 구성 및
-                <strong class="highlight"
-                  >공군 체계단 최초 React 기반 웹 서비스 구성 도입</strong
-                >
+                <strong>공군 체계단 최초 React 기반 웹 서비스 구성 도입</strong>
               </li>
               <li>
                 주요 게시판 관리 기능 및 유저 관련 백오피스 관리 기능 담당
@@ -502,10 +546,10 @@
               </li>
               <li>GitLab으로 이슈 관리 및 Git-Flow 기반 협업 체계 구축</li>
             </ul>
+          </div>
 
-            <h4 style="margin-top: 20px; margin-bottom: 10px">
-              공군군수사령부 - 인트라넷개발담당 (2022.06 ~ 2023.12)
-            </h4>
+          <div class="sub-project">
+            <h4>공군군수사령부 - 인트라넷개발담당 (2022.06 ~ 2023.12)</h4>
             <div class="tech-stack">
               <span class="tech-tag">eGov</span>
               <span class="tech-tag">Tibero</span>
@@ -513,7 +557,44 @@
             </div>
             <ul>
               <li>
-                공군군수사령부에서 군수관리 인트라넷 웹 서비스 개발 및 유지보수
+                군수 업무 행정 자동화를 위한 인트라넷 웹 서비스 개발 및 운영
+              </li>
+
+              <li>
+                Tibero DB 기반 데이터 모델링 및 SQL 쿼리 작성(PL/SQL 활용 자동화
+                수행)
+              </li>
+            </ul>
+          </div>
+
+          <div class="sub-project">
+            <h4>국방 방사선 안전관리 체계 개발 (FE/BE, 2022.07 ~ 2022.12)</h4>
+            <div class="tech-stack">
+              <span class="tech-tag">eGov</span>
+              <span class="tech-tag">Tibero</span>
+              <span class="tech-tag">JQuery</span>
+            </div>
+            <ul>
+              <li>
+                방사선 장비·물질 관리 및 피폭 이력 데이터 통합을 통한 데이터
+                정합성 및 작업자 안전 확보 목표
+              </li>
+              <li>
+                방사선 피폭량 모니터링 및 TLD 기반 개인 방사선 기록 관리 기능
+                구현
+              </li>
+              <li>
+                작업자/관리자 간
+                <strong class="highlight"
+                  >권한별 인적정보 De-identification 처리</strong
+                >
+              </li>
+              <li>
+                <a
+                  href="https://kookbang.dema.mil.kr/newsWeb/20230623/1/ATCE_CTGR_0010050000/view.do"
+                  target="_blank"
+                  >국방일보 - 실무자 보고부터 관리자 검토까지 ‘원스톱’ 처리 ↗</a
+                >
               </li>
             </ul>
           </div>
@@ -530,32 +611,23 @@
             <span class="tech-tag">KoNLPy</span>
             <span class="tech-tag">Tensorflow</span>
             <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">firebase(auth, store, storage)</span>
+            <span class="tech-tag">Firebase</span>
             <span class="tech-tag">React</span>
-            <span class="tech-tag">Redux-Hooks</span>
-            <span class="tech-tag">Selenium</span>
-            <span class="tech-tag">BeautifulSoup</span>
           </div>
-          <div class="work-description">
-            <p>
-              산후도우미 매칭 플랫폼을 개발하는 시리즈 A 스타트업 (대구 소재)
-            </p>
-            <ul>
-              <li>
-                후기 데이터 수집 및 분류 자동화:
-                <span class="highlight"
-                  >5만 건의 산후도우미 관련 게시글 수집</span
-                >
-                및 k-means 클러스터링을 통한
-                <strong>후기/비후기 자동 분류</strong> (후기 비율 약 40%)
-              </li>
-              <li>
-                자회사 파견 서비스 랜딩페이지 및 백오피스 개발, firebase 기반
-                호스팅 환경 구축 -
-                <a href="https://dear.care/" target="_blank">링크</a>
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li>
+              후기 데이터 수집 및 분류 자동화: 산후도우미 관련 게시글 스크랩
+              스케줄링을 통한
+              <span class="highlight">5만 건의 데이터 수집</span>
+              및 k-means 클러스터링을 통한
+              <strong>후기/비후기 자동 분류</strong> (후기 비율 약 40%)
+            </li>
+            <li>
+              자회사 파견 서비스 랜딩페이지 및 백오피스 개발, firebase 기반
+              호스팅 환경 구축 -
+              <a href="https://dear.care/" target="_blank">dear.care ↗</a>
+            </li>
+          </ul>
         </div>
 
         <div class="work-item">
@@ -566,16 +638,17 @@
           <div class="work-role">소프트웨어 엔지니어</div>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
-            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">FastAPI</span>
             <span class="tech-tag">MySQL</span>
             <span class="tech-tag">Nginx</span>
           </div>
-          <div class="work-description">
-            <p>
+          <ul>
+            <li>
               자연어 처리 기반 SI 프로젝트 회사에서 웹 백엔드 개발 및 서버 운영
               담당
-            </p>
-          </div>
+            </li>
+            <li>Private Project - Python, FastAPI, Word2Vec, KoNLPy</li>
+          </ul>
         </div>
       </section>
 
@@ -586,14 +659,13 @@
           <div class="work-header">
             <div class="work-title">
               <a href="https://landing.kanata.live/" target="_blank"
-                >서브컬쳐 기반 일본어 회화 서비스 - 카나타</a
+                >서브컬쳐 기반 일본어 회화 서비스 - 카나타 ↗</a
               >
             </div>
             <div class="work-period">2025.06 - 2025.12</div>
           </div>
-          <div class="project-meta">
-            소프트웨어 마에스트로 16기 프로젝트 · 3인 개발, 프론트엔드 파트 담당
-            및 팀장 역할
+          <div class="work-role">
+            소프트웨어 마에스트로 16기 · 3인 개발 (팀장, FE)
           </div>
           <div class="tech-stack">
             <span class="tech-tag">React</span>
@@ -601,47 +673,41 @@
             <span class="tech-tag">Emotion</span>
             <span class="tech-tag">Zustand</span>
             <span class="tech-tag">React Query</span>
-            <span class="tech-tag">TSyringe</span>
-            <span class="tech-tag">Livekit Client</span>
+            <span class="tech-tag">Livekit</span>
             <span class="tech-tag">Live2D</span>
-            <span class="tech-tag">Figma</span>
-            <span class="tech-tag">Posthog</span>
           </div>
-          <div class="work-description">
-            <ul>
-              <li>
-                AI 캐릭터 음성 대화 서비스 구현으로 일본어 학습자 타겟 서비스
-                구축 (<span class="highlight">가입자 1,100명, 평균 WAU 560</span
-                >)
-              </li>
-              <li>
-                <strong>LiveKit 기반 WebRTC 음성 채팅</strong> 및 통합 메시지
-                처리 로직 구현,
-                <strong>Live2D 캐릭터 실시간 립싱크 및 감정 표현 연동</strong>
-              </li>
-              <li>
-                Live2D 기기별 텍스처 다운스케일링 및 싱글톤 패턴 적용으로
-                <strong>모바일 환경 메모리 최적화</strong>, MVVM 패턴 도입으로
-                컴포넌트 별 책임 분리를 통한 코드 구조 설계
-              </li>
-
-              <li>
-                Posthog 및 GA를 활용한 이벤트 로깅 및 분석 시스템 구축을 통한
-                유입 경로 추적에 따른 바이럴 수행
-              </li>
-              <li>
-                Web / Native 환경별 형태소 분석 라이브러리 적용 및 형태소 분석
-                로직 구현
-              </li>
-              <li>
-                전체 서비스 Figma 활용 디자인 수행 및 Storybook 기반 디자인
-                시스템 구축
-              </li>
-              <li>
-                그 외 Live2D 캐릭터 모델 외주 업무 연락 및 주요 소통 채널 관리
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li>
+              AI 캐릭터 음성 대화 서비스 구현으로 일본어 학습자 타겟 서비스 구축
+              (<span class="highlight">가입자 1,600명, 평균 WAU 560</span>)
+            </li>
+            <li>
+              <strong>LiveKit 기반 WebRTC 음성 채팅</strong> 및 통합 메시지 처리
+              로직 구현,
+              <strong
+                >Live2D 캐릭터 실시간 립싱크 및 감정 표현 연동 (WebView 연동을
+                통한 상호작용)</strong
+              >
+            </li>
+            <li>
+              Live2D 기기별 텍스처 다운스케일링 및 싱글톤 패턴 적용으로
+              <strong>모바일 환경 메모리 최적화</strong>, MVVM 패턴 도입으로
+              컴포넌트 별 책임 분리를 통한 코드 구조 설계
+            </li>
+            <li>
+              기존 kuromoji 형태소
+              <span class="highlight">라이브러리 포크 후 Native 호환 구현</span>
+              -
+              <a
+                href="https://www.npmjs.com/package/@fotone/react-native-kuromoji?activeTab=readme"
+                >@fotone/react-native-kuromoji ↗</a
+              >
+            </li>
+            <li>
+              전체 서비스 Figma 활용 디자인 수행 및 Storybook 기반 디자인 시스템
+              구축
+            </li>
+          </ul>
         </div>
 
         <div class="work-item">
@@ -652,152 +718,130 @@
             </div>
             <div class="work-period">2025.05 - 2025.06</div>
           </div>
-          <div class="project-meta">개인 프로젝트 · 1인 단독 개발</div>
+          <div class="work-role">개인 프로젝트 · 1인 단독 개발</div>
           <div class="tech-stack">
             <span class="tech-tag">React</span>
             <span class="tech-tag">Next.js</span>
             <span class="tech-tag">Spring Boot</span>
             <span class="tech-tag">Docker compose</span>
             <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">NGINX</span>
           </div>
-          <div class="work-description">
-            <ul>
-              <li>
-                오프라인 행사 참여 유도를 위한 투표 바이럴 서비스 풀스택
-                개발(<span class="highlight"
-                  >이벤트 기간 페이지 조회수 1,231회, 최대 WAU 170</span
-                >)
-              </li>
-              <li>
-                <strong>OAuth 2.0 PKCE 기반 Twitter 소셜 로그인</strong> 및
-                Docker Compose 멀티 컨테이너 배포 환경 구축
-              </li>
-              <li>
-                테마 제출 및 SNS 공유 연동 바이럴 유도,
-                <span class="highlight"
-                  >오프라인 참석자 4배 증가 (11명 → 41명, SNS 노출 조회수 약
-                  17,000회)</span
-                >
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li>
+              오프라인 행사 참여 유도를 위한 투표 바이럴 서비스 풀스택
+              개발(<span class="highlight"
+                >이벤트 기간 페이지 조회수 1,231회, 최대 WAU 170</span
+              >)
+            </li>
+            <li>
+              테마 제출 및 SNS 공유 연동 바이럴 유도,
+              <span class="highlight"
+                >오프라인 참석자 4배 증가 (11명 → 41명, SNS 노출 조회수 약
+                17,000회)</span
+              >
+            </li>
+            <li>
+              Agentic Coding을 활용한 1달 간 최소한의 MVP 개발 후 빠른 바이럴
+              마케팅 수행
+            </li>
+          </ul>
         </div>
 
         <div class="work-item">
           <div class="work-header">
-            <div class="work-title">law-farm</div>
+            <div class="work-title">
+              임베딩 기반 법률 정보 추천 시스템 - law-farm
+            </div>
             <div class="work-period">2021.03 - 2021.12</div>
           </div>
-          <div class="project-meta">
-            졸업 프로젝트 · 프로젝트 리더, 백엔드 및 프론트엔드 담당
-          </div>
+          <div class="work-role">졸업 프로젝트 · 2인 개발 (팀장, BE/ML)</div>
           <div class="tech-stack">
             <span class="tech-tag">React.js</span>
             <span class="tech-tag">FastAPI</span>
             <span class="tech-tag">Gensim</span>
             <span class="tech-tag">KoNLPy</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Docker</span>
           </div>
-          <div class="work-description">
-            Word2Vec 임베딩 기반 법률 정보 추천 시스템
-          </div>
+          <ul>
+            <li>
+              비전문가를 위한 Word2Vec 임베딩 기반 법률 정보 추천 검색 플랫폼
+            </li>
+            <li>
+              KoNLPy로 자연어 문장을 형태소 분석하고, Word2Vec 임베딩 모델을
+              활용한 <span class="highlight">법률 간 유사도 계산</span>으로 단순
+              키워드 매칭이 아닌 맥락 기반 검색 제공
+            </li>
+            <li>
+              온톨로지 형식의 원본 데이터를 법령→조문→항의 계층적 JSON 구조로
+              변환하여
+              <span class="highlight"
+                >법률 67개, 조문 6,256개, 항목 11,254개</span
+              >
+              규모의 구조화된 데이터셋 구축
+            </li>
+            <li>
+              열람 기록, 좋아요, 북마크 등 사용자 행동 데이터를 분석하여
+              개인화된 연관 법률 추천 시스템 구현
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section id="awards">
-        <h2>ETC</h2>
-
-        <div class="work-item">
-          <div class="work-header">
-            <div class="work-title">전군 사이버작전 전문 교육 최우수 수료</div>
-            <div class="work-period">2023.06</div>
-          </div>
-          <div class="work-description">
-            사이버작전사령부에서 주관한 CVE 기반 취약점 대응 및 시큐어 코딩
-            교육으로 과정 최우수로 수료
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-header">
-            <div class="work-title">
-              NH 투자증권 빅데이터 경진대회 본선 진출
+      <section class="grid-2">
+        <div class="grid-item">
+          <h3>Awards & Activities</h3>
+          <div class="list-item">
+            <span class="list-title"
+              >전군 사이버작전 전문 교육 최우수 수료</span
+            >
+            <div class="list-meta">2023.06</div>
+            <div class="list-desc">
+              사이버작전사령부 주관 CVE 기반 취약점 대응 및 시큐어 코딩 교육
             </div>
-            <div class="work-period">2020.11 - 2021.01</div>
           </div>
-          <div class="work-description">
-            <ul>
-              <li>
-                진짜 뉴스와 가짜(상업성) 뉴스 판별 모델 개발, GPU 효율성을 위해
-                LSTM 대신 Conv1D 활용
-              </li>
-              <li>총 192개 팀 중 본선 진출 44개 팀 선정</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-header">
-            <div class="work-title">
-              SW중심대학 대경권 프로그래밍경진대회 장려상
+          <div class="list-item">
+            <span class="list-title"
+              >NH 투자증권 빅데이터 경진대회 본선 진출</span
+            >
+            <div class="list-meta">2020.11 - 2021.01</div>
+            <div class="list-desc">
+              진짜/가짜 뉴스 판별 모델 개발 (Conv1D 활용), 상위 44개팀 선정
             </div>
-            <div class="work-period">2020.05</div>
           </div>
-          <div class="work-description">
-            대구경북권 내의 SW 중심대학에서 주최한 PS 대회에서 본선 진출 후
-            상위권 입상
+          <div class="list-item">
+            <span class="list-title"
+              >SW중심대학 대경권 프로그래밍경진대회 장려상</span
+            >
+            <div class="list-meta">2020.05, 2019.05</div>
           </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-header">
-            <div class="work-title">
-              SW중심대학 대경권 프로그래밍경진대회 장려상
+          <div class="list-item">
+            <span class="list-title">2018 KNU 창업동아리</span>
+            <div class="list-meta">2018.03 - 2018.10</div>
+            <div class="list-desc">
+              TextRank 기반 논문 요약 서비스 기획 및 개발
             </div>
-            <div class="work-period">2019.05</div>
-          </div>
-          <div class="work-description">
-            대구경북권 내의 SW 중심대학에서 주최한 PS 대회에서 본선 진출 후
-            상위권 입상
           </div>
         </div>
 
-        <div class="work-item">
-          <div class="work-header">
-            <div class="work-title">2018 KNU 창업동아리</div>
-            <div class="work-period">2018.03 - 2018.10</div>
+        <div class="grid-item">
+          <h3>Education & Certifications</h3>
+          <div class="list-item">
+            <span class="list-title">경북대학교 소프트웨어학과</span>
+            <div class="list-meta">2017.02 - 2022.02</div>
+            <div class="list-desc">GPA: 3.96 / 4.3</div>
           </div>
-          <div class="work-description">
-            TextRank 기반 논문 요약 서비스를 기획 및 개발, 5명 규모의
-            창업동아리에 참여
+          <div class="list-item">
+            <span class="list-title">소프트웨어 마에스트로 16기</span>
+            <div class="list-meta">2025.06 - 2025.12</div>
           </div>
-        </div>
-      </section>
-
-      <section id="education">
-        <h2>Education & Certifications</h2>
-        <div class="education-cert">
-          <div>
-            <h3>경북대학교 소프트웨어학과</h3>
-            <p>2017.02 - 2022.02 (졸업)</p>
-            <p>GPA: 3.98 / 4.3</p>
+          <div class="list-item">
+            <span class="list-title">SQLD</span>
+            <div class="list-meta">2024.09</div>
           </div>
-          <div>
-            <h3>자격 및 활동</h3>
-            <ul class="cert-list">
-              <li>
-                <span class="cert-name">소프트웨어 마에스트로 16기</span>
-                <span class="cert-date">2025.06 - 2025.12</span>
-              </li>
-              <li>
-                <span class="cert-name">SQLD</span>
-                <span class="cert-date">2024.09</span>
-              </li>
-              <li>
-                <span class="cert-name">정보처리기사</span>
-                <span class="cert-date">2020.12</span>
-              </li>
-            </ul>
+          <div class="list-item">
+            <span class="list-title">정보처리기사</span>
+            <div class="list-meta">2020.12</div>
           </div>
         </div>
       </section>
