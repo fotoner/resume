@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>남현재 - Resume</title>
+    <title>Nam Hyeonjae / ナム・ヒョンジェ - Resume</title>
     <link
       rel="stylesheet"
       as="style"
@@ -34,13 +34,46 @@
       body {
         font-family: "Pretendard Variable", Pretendard, -apple-system,
           BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-          "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+          "Apple SD Gothic Neo", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
           "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
         line-height: 1.65;
         color: var(--text-sub);
         background: var(--bg-body);
         -webkit-font-smoothing: antialiased;
         padding: 40px 20px;
+      }
+
+      /* Language Switcher */
+      .lang-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        display: flex;
+        gap: 8px;
+      }
+
+      .lang-btn {
+        padding: 8px 16px;
+        border: 2px solid var(--primary);
+        border-radius: 8px;
+        background: var(--bg-sheet);
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .lang-btn:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .lang-btn.active {
+        background: var(--primary);
+        color: white;
       }
 
       /* The "Digital Paper" Container */
@@ -331,6 +364,10 @@
           padding: 0;
         }
 
+        .lang-switcher {
+          display: none;
+        }
+
         .resume-sheet {
           box-shadow: none;
           margin: 0;
@@ -372,39 +409,6 @@
         }
       }
 
-      /* Language Switcher */
-      .lang-switcher {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 100;
-        display: flex;
-        gap: 8px;
-      }
-
-      .lang-btn {
-        padding: 8px 16px;
-        border: 2px solid var(--primary);
-        border-radius: 8px;
-        background: var(--bg-sheet);
-        color: var(--primary);
-        font-weight: 600;
-        font-size: 0.9rem;
-        cursor: pointer;
-        text-decoration: none;
-        transition: all 0.2s;
-      }
-
-      .lang-btn:hover {
-        background: var(--primary);
-        color: white;
-      }
-
-      .lang-btn.active {
-        background: var(--primary);
-        color: white;
-      }
-
       /* Mobile */
       @media (max-width: 768px) {
         body {
@@ -444,25 +448,19 @@
           gap: 4px;
         }
       }
-
-      @media print {
-        .lang-switcher {
-          display: none;
-        }
-      }
     </style>
   </head>
   <body>
     <div class="lang-switcher">
-      <a href="index.html" class="lang-btn active">한국어</a>
-      <a href="index_jp.html" class="lang-btn">日本語</a>
+      <a href="index.html" class="lang-btn">한국어</a>
+      <a href="index_jp.html" class="lang-btn active">日本語</a>
     </div>
 
     <div class="resume-sheet">
       <header>
         <div class="header-container">
           <div class="header-content">
-            <h1>남현재</h1>
+            <h1>Nam Hyeonjae / ナム・ヒョンジェ</h1>
             <div class="subtitle">Product Engineer</div>
 
             <div class="contact-info">
@@ -470,7 +468,7 @@
                 <span>jaemuon5582@gmail.com</span>
               </div>
               <div class="contact-item">
-                <span>010-4085-4426</span>
+                <span>+82-10-4085-4426</span>
               </div>
               <div class="contact-item">
                 <a href="https://github.com/fotoner" target="_blank"
@@ -486,31 +484,20 @@
               </div>
             </div>
           </div>
-          <img
-            src="pic_jp.jpg"
-            alt="남현재 프로필 사진"
-            class="profile-image"
-          />
+          <img src="pic_jp.jpg" alt="プロフィール写真" class="profile-image" />
         </div>
 
         <div class="intro-text">
           <p>
-            하루 700만 요청을 처리하는 공군 인트라넷에서 쿼리 최적화로
-            응답시간을 P90 기준 80% 줄였습니다. 스타트업에서는 레이블 없는 5만
-            데이터를 k-means 클러스터링으로 분류 자동화했습니다.
+            1日700万リクエストを処理する空軍イントラネットで、クエリ最適化によりレスポンスタイムをP90基準で80%短縮しました。スタートアップでは、ラベルのない5万件のデータをk-meansクラスタリングで自動分類しました。
           </p>
           <p>
-            혼자보다 팀이 함께 나아가는 것을 중요하게 생각합니다. 공군에서
-            체계단 최초 React 프로젝트를 도입할 때 코드 컨벤션을 정립했고, Edge
-            IE 호환모드 제거로 발생한 CORS 이슈는 각 서비스 담당자들에게 전환
-            가이드를 제공하며 해결했습니다.
+            一人よりチームで共に進むことを大切にしています。空軍でシステム開発チーム初のReactプロジェクトを導入する際にコード規約を策定し、Edge
+            IEモード廃止に伴うCORS問題は各サービス担当者への移行ガイドを提供して解決しました。
           </p>
           <p>
-            현재는 소프트웨어 마에스트로 16기에서 팀장으로 3명의 팀을 이끌며 AI
-            음성 대화 기반 일본어 학습 서비스를 개발하고 있으며, 런칭 2개월 만에
-            1,600명의 가입자와 평균 WAU 560명을 확보했습니다. 기술적으로 잘
-            만드는 것만큼, 실제 사람들이 계속 사용하는 서비스를 만드는 것이
-            중요하다고 생각합니다.
+            現在はソフトウェアマエストロ16期でリーダーとして3人のチームを率い、AI音声会話ベースの日本語学習サービスを開発しています。リリース2ヶ月で1,600人の登録者と平均WAU
+            560人を獲得しました。技術的に優れたものを作ることと同様に、実際に人々が使い続けるサービスを作ることが重要だと考えています。
           </p>
         </div>
       </header>
@@ -520,15 +507,18 @@
 
         <div class="work-item allow-break">
           <div class="work-header">
-            <div class="work-title">대한민국 공군</div>
+            <div class="work-title">大韓民国空軍</div>
             <div class="work-period">2022.06 - 2025.05</div>
           </div>
           <div class="work-role">
-            인트라넷 서비스 개발 및 포털 운영 · 학사장교, 중위 전역
+            イントラネットサービス開発およびポータル運用 · 学士士官、中尉除隊
           </div>
 
           <div class="sub-project">
-            <h4>정보체계관리단 - 인트라넷포털운영담당 (2024.01 ~ 2025.05)</h4>
+            <h4>
+              情報システム管理団 - イントラネットポータル運用担当 (2024.01 ~
+              2025.05)
+            </h4>
             <div class="tech-stack">
               <span class="tech-tag">Java 1.6</span>
               <span class="tech-tag">Spring 3.2</span>
@@ -539,43 +529,42 @@
             </div>
             <ul>
               <li>
-                <span class="highlight">하루 700만 건의 요청</span>이 발생하는
-                <span class="highlight">6만 공군인</span> 전체가 사용하는
-                통합인트라넷포털 운영 및 유지보수
+                <span class="highlight">1日700万リクエスト</span>が発生する
+                <span class="highlight">6万人の空軍人</span
+                >全員が使用する統合イントラネットポータルの運用・保守
               </li>
               <li>
-                어드민 권한 처리 쿼리 최적화로 서비스 성능 개선 (<span
+                管理者権限処理クエリの最適化によるサービス性能改善（<span
                   class="highlight"
-                  >평균 800ms → 160ms 대로 개선, P90 기준 80% 개선</span
-                >)
+                  >平均800ms → 160msに改善、P90基準80%向上</span
+                >）
               </li>
               <li>
-                Oracle 서버 이관 후
-                <strong>DBCP Full 장애 해결</strong> → Hugepage 설정 최적화로
-                Hang 현상 해소
+                Oracleサーバー移行後の<strong>DBCP Full障害解決</strong> →
+                Hugepage設定最適化によりハング現象を解消
               </li>
               <li>
-                온나라2.0 서비스(전자결재시스템) 전환에 따른 구 조직도 배치 cron
-                수정 및 테스트, SSO 세션 처리 파트 수정
+                オンナラ2.0サービス（電子決裁システム）移行に伴う旧組織図バッチcron修正・テスト、SSOセッション処理部分の修正
               </li>
               <li>
-                Edge 내 IE 호환모드 제거에 따른 CORS 문제 인식 및 포털 연동
-                서비스 담당자들에 대한 전환 안내 및 지원
+                Edge内IEモード廃止に伴うCORS問題の認識およびポータル連携サービス担当者への移行案内・サポート
               </li>
               <li>
-                팀 내 취약점 개선 업무, 침해/장애 대응 및 후속조치(훈련/실제)
-                주도 -
+                チーム内の脆弱性改善業務、侵害/障害対応および事後措置（訓練/実際）を主導
+                -
                 <a
                   href="http://www.boannews.com/media/view.asp?idx=131847"
                   target="_blank"
-                  >관련 기사 ↗</a
+                  >関連記事 ↗</a
                 >
               </li>
             </ul>
           </div>
 
           <div class="sub-project">
-            <h4>인터넷 복지시설예약체계 개발 (FE, 2024.03 ~ 2024.12)</h4>
+            <h4>
+              インターネット福利施設予約システム開発 (FE, 2024.03 ~ 2024.12)
+            </h4>
             <div class="tech-stack">
               <span class="tech-tag">React</span>
               <span class="tech-tag">TypeScript</span>
@@ -585,26 +574,25 @@
             </div>
             <ul>
               <li>
-                공군호텔, 그린나래호텔, 체력단련시설에 대한 레거시 예약 관리
-                서비스 재개발
+                空軍ホテル、グリーンナレホテル、体力鍛錬施設のレガシー予約管理サービスの再開発
               </li>
               <li>
-                초기 프론트엔드 프로젝트 구성 및
-                <strong>공군 체계단 최초 React 기반 웹 서비스 구성 도입</strong>
+                初期フロントエンドプロジェクト構成および<strong
+                  >空軍システム開発チーム初のReactベースWebサービス導入</strong
+                >
               </li>
               <li>
-                주요 게시판 관리 기능 및 유저 관련 백오피스 관리 기능 담당
+                主要掲示板管理機能およびユーザー関連バックオフィス管理機能を担当
               </li>
               <li>
-                ESLint, Prettier를 활용한 코드컨벤션 구성을 통해 팀 내 코드 품질
-                향상 및 개발문화 개선
+                ESLint、Prettierを活用したコード規約構成により、チーム内のコード品質向上および開発文化改善
               </li>
-              <li>GitLab을 통한 이슈 관리 및 Git-Flow 기반 협업</li>
+              <li>GitLabを通じた課題管理およびGit-Flowベースの協業</li>
             </ul>
           </div>
 
           <div class="sub-project">
-            <h4>공군군수사령부 - 인트라넷개발담당 (2022.06 ~ 2023.12)</h4>
+            <h4>空軍軍需司令部 - イントラネット開発担当 (2022.06 ~ 2023.12)</h4>
             <div class="tech-stack">
               <span class="tech-tag">eGov</span>
               <span class="tech-tag">Tibero</span>
@@ -612,18 +600,17 @@
             </div>
             <ul>
               <li>
-                군수 업무 행정 자동화를 위한 인트라넷 웹 서비스 개발 및 운영
+                軍需業務の行政自動化のためのイントラネットWebサービス開発および運用
               </li>
-
               <li>
-                Tibero DB 기반 데이터 모델링 및 SQL 쿼리 작성(PL/SQL 활용 자동화
-                수행)
+                Tibero
+                DBベースのデータモデリングおよびSQLクエリ作成（PL/SQLを活用した自動化実行）
               </li>
             </ul>
           </div>
 
           <div class="sub-project">
-            <h4>국방 방사선 안전관리 체계 개발 (FE/BE, 2022.07 ~ 2022.12)</h4>
+            <h4>国防放射線安全管理システム開発 (FE/BE, 2022.07 ~ 2022.12)</h4>
             <div class="tech-stack">
               <span class="tech-tag">eGov</span>
               <span class="tech-tag">Tibero</span>
@@ -631,24 +618,22 @@
             </div>
             <ul>
               <li>
-                방사선 장비·물질 관리 및 피폭 이력 데이터 통합을 통한 데이터
-                정합성 및 작업자 안전 확보 목표
+                放射線機器・物質管理および被ばく履歴データ統合によるデータ整合性と作業者安全確保を目標
               </li>
               <li>
-                방사선 피폭량 모니터링 및 TLD 기반 개인 방사선 기록 관리 기능
-                구현
+                放射線被ばく量モニタリングおよびTLDベースの個人放射線記録管理機能を実装
               </li>
               <li>
-                작업자/관리자 간
-                <strong class="highlight"
-                  >권한별 인적정보 De-identification 처리</strong
+                作業者/管理者間の<strong class="highlight"
+                  >権限別人的情報の非識別化処理</strong
                 >
               </li>
               <li>
                 <a
                   href="https://kookbang.dema.mil.kr/newsWeb/20230623/1/ATCE_CTGR_0010050000/view.do"
                   target="_blank"
-                  >국방일보 - 실무자 보고부터 관리자 검토까지 ‘원스톱’ 처리 ↗</a
+                  >国防日報 - 実務者報告から管理者検討まで「ワンストップ」処理
+                  ↗</a
                 >
               </li>
             </ul>
@@ -657,10 +642,10 @@
 
         <div class="work-item">
           <div class="work-header">
-            <div class="work-title">아이코코</div>
+            <div class="work-title">アイコーコー</div>
             <div class="work-period">2020.11 - 2021.05</div>
           </div>
-          <div class="work-role">소프트웨어 엔지니어</div>
+          <div class="work-role">ソフトウェアエンジニア</div>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">KoNLPy</span>
@@ -671,15 +656,14 @@
           </div>
           <ul>
             <li>
-              후기 데이터 수집 및 분류 자동화: 산후도우미 관련 게시글 스크랩
-              스케줄링을 통한
-              <span class="highlight">5만 건의 데이터 수집</span>
-              및 k-means 클러스터링을 통한
-              <strong>후기/비후기 자동 분류</strong> (후기 비율 약 40%)
+              レビューデータ収集および分類自動化：産後ヘルパー関連投稿のスクレイピングスケジューリングにより<span
+                class="highlight"
+                >5万件のデータを収集</span
+              >し、k-meansクラスタリングによる<strong>レビュー/非レビューの自動分類</strong>（レビュー比率約40%）
             </li>
             <li>
-              자회사 파견 서비스 랜딩페이지 및 백오피스 개발, firebase 기반
-              호스팅 환경 구축 -
+              子会社派遣サービスのランディングページおよびバックオフィス開発、Firebaseベースのホスティング環境構築
+              -
               <a href="https://dear.care/" target="_blank">dear.care ↗</a>
             </li>
           </ul>
@@ -687,10 +671,10 @@
 
         <div class="work-item">
           <div class="work-header">
-            <div class="work-title">필로우 스튜디오</div>
+            <div class="work-title">Pillow Studio</div>
             <div class="work-period">2019.02 - 2019.07</div>
           </div>
-          <div class="work-role">소프트웨어 엔지니어</div>
+          <div class="work-role">ソフトウェアエンジニア</div>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">FastAPI</span>
@@ -699,8 +683,7 @@
           </div>
           <ul>
             <li>
-              자연어 처리 기반 SI 프로젝트 회사에서 웹 백엔드 개발 및 서버 운영
-              담당
+              自然言語処理ベースのSIプロジェクト会社でWebバックエンド開発およびサーバー運用を担当
             </li>
             <li>Private Project - Python, FastAPI, Word2Vec, KoNLPy</li>
           </ul>
@@ -714,13 +697,13 @@
           <div class="work-header">
             <div class="work-title">
               <a href="https://landing.kanata.live/" target="_blank"
-                >서브컬쳐 기반 일본어 회화 서비스 - 카나타 ↗</a
+                >Live2DベースのAIキャラクター音声会話サービス - カナタ ↗</a
               >
             </div>
             <div class="work-period">2025.06 - 2025.12</div>
           </div>
           <div class="work-role">
-            소프트웨어 마에스트로 16기 · 3인 개발 (팀장, FE)
+            Software Maestro 16th · 3人開発（リーダー、FE）
           </div>
           <div class="tech-stack">
             <span class="tech-tag">React</span>
@@ -733,25 +716,24 @@
           </div>
           <ul>
             <li>
-              AI 캐릭터 음성 대화 서비스 구현으로 일본어 학습자 타겟 서비스 구축
-              (<span class="highlight">가입자 1,600명, 평균 WAU 560</span>)
+              AIキャラクター音声会話サービスの実装により日本語学習者向けサービスを構築（<span
+                class="highlight"
+                >登録者1,600人、平均WAU 560</span
+              >）
             </li>
             <li>
-              <strong>LiveKit 기반 WebRTC 음성 채팅</strong> 및 통합 메시지 처리
-              로직 구현,
-              <strong
-                >Live2D 캐릭터 실시간 립싱크 및 감정 표현 연동 (WebView 연동을
-                통한 상호작용)</strong
+              <strong>LiveKitベースのWebRTC音声チャット</strong
+              >および統合メッセージ処理ロジックの実装、<strong
+                >Live2Dキャラクターのリアルタイムリップシンクおよび感情表現連動（WebView連携によるインタラクション）</strong
               >
             </li>
             <li>
-              Live2D 기기별 텍스처 다운스케일링 및 싱글톤 패턴 적용으로
-              <strong>모바일 환경 메모리 최적화</strong>, MVVM 패턴 도입으로
-              컴포넌트 별 책임 분리를 통한 코드 구조 설계
+              Live2Dのデバイス別テクスチャダウンスケーリングおよびシングルトンパターン適用による<strong>モバイル環境メモリ最適化</strong>、MVVMパターン導入によるコンポーネント別責任分離を通じたコード構造設計
             </li>
             <li>
-              기존 kuromoji 형태소
-              <span class="highlight">라이브러리 포크 후 Native 호환 구현</span>
+              既存のkuromoji形態素<span class="highlight"
+                >ライブラリをフォークしNative互換を実装</span
+              >
               -
               <a
                 href="https://www.npmjs.com/package/@fotone/react-native-kuromoji?activeTab=readme"
@@ -759,28 +741,30 @@
               >
             </li>
             <li>
-              전체 서비스 Figma 활용 디자인 수행 및 Storybook 기반 디자인 시스템
-              구축 -
+              サービス全体のFigmaを活用したデザイン実施およびStorybookベースのデザインシステム構築
+              -
               <a
                 href="https://www.figma.com/design/avUnLTqKhVmIhrG2fPNGt3/%EC%B9%B4%EB%82%98%ED%83%80-2.0-%EB%94%94%EC%9E%90%EC%9D%B8?node-id=1-2&t=hH2znuvk6H0UQQlE-1"
                 target="_blank"
               >
-                Figma 디자인 ↗</a
+                Figmaデザイン ↗</a
               >
             </li>
-            <li>Live2D 작가 소통 및 고객 커뮤니케이션 채널 관리</li>
+            <li>
+              Live2Dアーティストとのコミュニケーションおよび顧客コミュニケーションチャンネル管理
+            </li>
           </ul>
         </div>
 
         <div class="work-item">
           <div class="work-header">
             <div class="work-title">
-              오프라인 행사 참여자 대상 바이럴 서비스 - 오타쿠붐박스
-              오픈테마보드
+              オフラインイベント参加者向けバイラルサービス -
+              オタクブームボックス オープンテーマボード
             </div>
             <div class="work-period">2025.05 - 2025.06</div>
           </div>
-          <div class="work-role">개인 프로젝트 · 1인 단독 개발</div>
+          <div class="work-role">個人プロジェクト · 1人単独開発</div>
           <div class="tech-stack">
             <span class="tech-tag">React</span>
             <span class="tech-tag">Next.js</span>
@@ -790,21 +774,21 @@
           </div>
           <ul>
             <li>
-              오프라인 행사 참여 유도를 위한 투표 바이럴 서비스 풀스택
-              개발(<span class="highlight"
-                >이벤트 기간 페이지 조회수 1,231회, 최대 WAU 170</span
-              >)
+              オフラインイベント参加誘導のための投票バイラルサービスのフルスタック開発（<span
+                class="highlight"
+                >イベント期間ページビュー1,231回、最大WAU 170</span
+              >）
             </li>
             <li>
-              테마 제출 및 SNS 공유 연동 바이럴 유도,
-              <span class="highlight"
-                >오프라인 참석자 4배 증가 (11명 → 41명, SNS 노출 조회수 약
-                17,000회)</span
+              テーマ提出およびSNS共有連携によるバイラル誘導、<span
+                class="highlight"
+                >オフライン参加者4倍増加（11人 →
+                41人、SNS露出ビュー約17,000回）</span
               >
             </li>
             <li>
-              Agentic Coding을 활용한 1달 간 최소한의 MVP 개발 후 빠른 바이럴
-              마케팅 수행
+              Agentic
+              Codingを活用した1ヶ月間の最小限MVP開発後、迅速なバイラルマーケティングを実施
             </li>
           </ul>
         </div>
@@ -812,11 +796,13 @@
         <div class="work-item">
           <div class="work-header">
             <div class="work-title">
-              임베딩 기반 법률 정보 추천 시스템 - law-farm
+              埋め込みベースの法律情報推薦システム - law-farm
             </div>
             <div class="work-period">2021.03 - 2021.12</div>
           </div>
-          <div class="work-role">졸업 프로젝트 · 2인 개발 (팀장, BE/ML)</div>
+          <div class="work-role">
+            卒業プロジェクト · 2人開発（リーダー、BE/ML）
+          </div>
           <div class="tech-stack">
             <span class="tech-tag">React.js</span>
             <span class="tech-tag">FastAPI</span>
@@ -827,24 +813,22 @@
           </div>
           <ul>
             <li>
-              비전문가를 위한 Word2Vec 임베딩 기반 법률 정보 추천 검색 플랫폼
+              非専門家向けのWord2Vec埋め込みベース法律情報推薦検索プラットフォーム
             </li>
             <li>
-              KoNLPy로 자연어 문장을 형태소 분석하고, Word2Vec 임베딩 모델을
-              활용한 <span class="highlight">법률 간 유사도 계산</span>으로 단순
-              키워드 매칭이 아닌 맥락 기반 검색 제공
+              KoNLPyで自然言語文を形態素分析し、Word2Vec埋め込みモデルを活用した<span
+                class="highlight"
+                >法律間の類似度計算</span
+              >により、単純なキーワードマッチングではなく文脈ベースの検索を提供
             </li>
             <li>
-              온톨로지 형식의 원본 데이터를 법령→조문→항의 계층적 JSON 구조로
-              변환하여
-              <span class="highlight"
-                >법률 67개, 조문 6,256개, 항목 11,254개</span
-              >
-              규모의 구조화된 데이터셋 구축
+              オントロジー形式の元データを法令→条文→項の階層的JSON構造に変換し、<span
+                class="highlight"
+                >法律67件、条文6,256件、項目11,254件</span
+              >規模の構造化データセットを構築
             </li>
             <li>
-              열람 기록, 좋아요, 북마크 등 사용자 행동 데이터를 분석하여
-              개인화된 연관 법률 추천 시스템 구현
+              閲覧履歴、いいね、ブックマークなどのユーザー行動データを分析し、パーソナライズされた関連法律推薦システムを実装
             </li>
           </ul>
         </div>
@@ -854,34 +838,32 @@
         <div class="grid-item">
           <h3>Awards & Activities</h3>
           <div class="list-item">
-            <span class="list-title"
-              >전군 사이버작전 전문 교육 최우수 수료</span
-            >
+            <span class="list-title">全軍サイバー作戦専門教育 最優秀修了</span>
             <div class="list-meta">2023.06</div>
             <div class="list-desc">
-              사이버작전사령부 주관 CVE 기반 취약점 대응 및 시큐어 코딩 교육
+              サイバー作戦司令部主催のCVEベース脆弱性対応およびセキュアコーディング教育
             </div>
           </div>
           <div class="list-item">
             <span class="list-title"
-              >NH 투자증권 빅데이터 경진대회 본선 진출</span
+              >NH投資証券ビッグデータコンテスト 本選進出</span
             >
             <div class="list-meta">2020.11 - 2021.01</div>
             <div class="list-desc">
-              진짜/가짜 뉴스 판별 모델 개발 (Conv1D 활용), 상위 44개팀 선정
+              フェイクニュース判別モデル開発（Conv1D活用）、上位44チーム選定
             </div>
           </div>
           <div class="list-item">
             <span class="list-title"
-              >SW중심대학 대경권 프로그래밍경진대회 장려상</span
+              >SW中心大学 大慶圏プログラミングコンテスト 奨励賞</span
             >
             <div class="list-meta">2020.05, 2019.05</div>
           </div>
           <div class="list-item">
-            <span class="list-title">2018 KNU 창업동아리</span>
+            <span class="list-title">2018 KNU 創業サークル</span>
             <div class="list-meta">2018.03 - 2018.10</div>
             <div class="list-desc">
-              TextRank 기반 논문 요약 서비스 기획 및 개발
+              TextRankベースの論文要約サービス企画および開発
             </div>
           </div>
         </div>
@@ -889,21 +871,30 @@
         <div class="grid-item">
           <h3>Education & Certifications</h3>
           <div class="list-item">
-            <span class="list-title">경북대학교 소프트웨어학과</span>
+            <span class="list-title">慶北大学校 ソフトウェア学科</span>
             <div class="list-meta">2017.02 - 2022.02</div>
             <div class="list-desc">GPA: 3.96 / 4.3</div>
           </div>
           <div class="list-item">
-            <span class="list-title">소프트웨어 마에스트로 16기</span>
+            <span class="list-title">Software Maestro 16th</span>
             <div class="list-meta">2025.06 - 2025.12</div>
+            <div class="list-desc">
+              韓国の科学技術情報通信部主管の国家エリートソフトウェア人材育成プログラム
+            </div>
           </div>
           <div class="list-item">
             <span class="list-title">SQLD</span>
             <div class="list-meta">2024.09</div>
+            <div class="list-desc">
+              SQL Developer - 韓国データベース民間資格
+            </div>
           </div>
           <div class="list-item">
-            <span class="list-title">정보처리기사</span>
+            <span class="list-title">情報処理技師</span>
             <div class="list-meta">2020.12</div>
+            <div class="list-desc">
+              韓国国家技術資格（日本の応用情報技術者に相当）
+            </div>
           </div>
         </div>
       </section>
