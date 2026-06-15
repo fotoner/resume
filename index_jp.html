@@ -489,21 +489,52 @@
 
         <div class="intro-text">
           <p>
-            1日700万リクエストを処理する空軍イントラネットで、クエリ最適化によりレスポンスタイムをP90基準で80%短縮しました。スタートアップでは、ラベルのない5万件のデータをk-meansクラスタリングで自動分類しました。
+            現在は<strong>グンドリ(Goondori)</strong>にて、軍人向けコミュニティ・コマースアプリのモバイルフロントエンドを担当し、React Native(Expo)ベースでプロダクト開発を行っています。<strong>GA4トラッキングインフラ</strong>をゼロから設計し、コマースファネル全体および検索・コンテンツエンゲージメントを計測することでデータドリブンな意思決定の基盤を整備しました。また、外部チャネルに依存していたお問い合わせフローを、アプリ・管理画面・ディープリンクをつなぐ<strong>インアプリ問い合わせシステム</strong>として内製化しました。さらに、バナーからネイティブ広告へと連携する広告収益化をプロダクション環境に統合しました。
           </p>
           <p>
-            一人よりチームで共に進むことを大切にしています。空軍でシステム開発チーム初のReactプロジェクトを導入する際にコード規約を策定し、Edge
-            IEモード廃止に伴うCORS問題は各サービス担当者への移行ガイドを提供して解決しました。
+            個人プロジェクトとして開発した<a href="https://chromewebstore.google.com/detail/cjhmbgfnddpcdfmoicfcocekmainhhdm" target="_blank">blue-badge-remover ↗</a>は、Xで<span class="highlight">1万件以上のリポスト</span>によりバイラルし、Chromeウェブストアで<span class="highlight">約4,000名のユーザー</span>と<span class="highlight">5.0★(21件の評価)</span>を獲得しました。Chrome・Firefox・Edgeのマルチブラウザ対応を<span class="highlight">330件以上のテスト</span>で自らメンテナンスしています。この経験を通じて、技術的に優れたものを作ることと同じくらい、<strong>実際に人々が使い続けるサービスを作ること</strong>が重要だと確信するようになりました。
           </p>
           <p>
-            現在はソフトウェアマエストロ16期でリーダーとして3人のチームを率い、AI音声会話ベースの日本語学習サービスを開発しています。リリース2ヶ月で1,600人の登録者と平均WAU
-            560人を獲得しました。技術的に優れたものを作ることと同様に、実際に人々が使い続けるサービスを作ることが重要だと考えています。
+            以前は<span class="highlight">1日700万リクエスト</span>を処理する空軍イントラネットにて、クエリ最適化によりレスポンスタイムを<span class="highlight">P90基準で80%短縮(800ms→160ms台)</span>しました。スタートアップではラベルなしの<span class="highlight">5万件のデータ</span>をk-meansクラスタリングで自動分類し、カナタでは<span class="highlight">登録者1,600名・平均WAU 560名</span>を達成しました。その過程で、<strong>一人よりチームが共に前進すること</strong>を最も大切にするようになりました。
           </p>
         </div>
       </header>
 
       <section id="experience">
         <h2>Work Experience</h2>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">グンドリ(Goondori)</div>
+            <div class="work-period">2026.03 - 現在</div>
+          </div>
+          <div class="work-role">
+            Product Engineer（モバイルフロントエンド）·
+            軍人コミュニティ＋コマースアプリ
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">React Native(Expo)</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Apollo/gql.tada</span>
+            <span class="tech-tag">Zustand</span>
+            <span class="tech-tag">NativeWind</span>
+            <span class="tech-tag">GA4</span>
+          </div>
+          <ul>
+            <li>
+              GA4トラッキングインフラをゼロから設計・構築し、イベントフックとスキーマ・定数体系を新たに整備しました。<strong>コマースファネル全工程（商品リスト・詳細・カート・即時購入・注文／決済）を一貫した基準で計測</strong>し、スクロール深度・プロモーションディメンションおよび検索トラッキング（view_item_list・select_item・search）まで含めて、<strong>データドリブンな意思決定の基盤</strong>を整えました。
+            </li>
+            <li>
+              アプリ内問い合わせシステムを<strong>アプリ・管理ページ・ディープリンク（link-web）までフルスタックで内製化</strong>し、従来の<strong>外部チャネル依存をアプリ内体験へと転換</strong>することで、問い合わせ対応フローを自社運営できる形に整理しました。
+            </li>
+            <li>
+              AdMobベースの広告マネタイズを担当し、バナー広告から<strong>ネイティブ広告のPoCを経てプロダクションへ統合</strong>し、コンテンツの流れを損なわないアプリ内広告体験を実現しました。
+            </li>
+            <li>
+              コミュニティ・コンテンツ参加機能を拡張し、カテゴリ単位のトラッキングや<strong>コンテンツタブのNタグ・レッドドットなど再訪問を促す仕組み</strong>を導入しました。また、商品詳細は<strong>CSPで隔離したWebViewレンダリング</strong>により安全に表示しています。
+            </li>
+          </ul>
+        </div>
 
         <div class="work-item allow-break">
           <div class="work-header">
@@ -692,6 +723,48 @@
 
       <section id="projects">
         <h2>Projects</h2>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-title">
+              <a
+                href="https://chromewebstore.google.com/detail/cjhmbgfnddpcdfmoicfcocekmainhhdm"
+                target="_blank"
+                >X 収益化ブルーバッジ非表示ブラウザ拡張機能 - Blue Badge Remover ↗</a
+              >
+            </div>
+            <div class="work-period">2026.03 - 現在</div>
+          </div>
+          <div class="work-role">個人プロジェクト · 1人での開発・保守</div>
+          <div class="tech-stack">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">WXT</span>
+            <span class="tech-tag">Manifest V3</span>
+            <span class="tech-tag">Vitest</span>
+            <span class="tech-tag">Playwright</span>
+          </div>
+          <ul>
+            <li>
+              X(Twitter)において収益化ブルーバッジ(Premium)アカウントを自動的に非表示にするブラウザ拡張機能です。X上で<span class="highlight">1万件以上のリポスト</span>によりバイラルとなり、<span class="highlight">Chrome ウェブストアで約4,000ユーザー / 5.0★</span>（21件の評価）を記録しています。
+            </li>
+            <li>
+              <strong>SVGバッジ構造の解析に基づく判別</strong>により、金色バッジ・機関認証を除外しつつ、キーワード・カテゴリフィルター（AdGuard形式の文法）やリポスト／引用フィルター、フォロー自動検出によるホワイトリストを備えた精緻なフィルタリングロジックを実装しています。
+            </li>
+            <li>
+              WXTの単一コードベースにより、<strong>Chrome（MV3）・Firefox（MV2）・Edgeのマルチブラウザ</strong>およびFirefox Androidに対応し、日本語・英語・韓国語の3言語へのローカライズを実施しています。
+            </li>
+            <li>
+              外部サーバーやアナリティクスを使用せず、すべての処理をブラウザローカルで完結させる<strong>プライバシーファーストの設計</strong>を採用しています。
+            </li>
+            <li>
+              CIに<span class="highlight">330件以上のVitestテスト</span>とPlaywright E2Eを組み込み、タグベースのリリース自動化を構築することで、1人によるOSSの安定した保守を実現しています（<a
+                href="https://github.com/fotoner/blue-badge-remover"
+                target="_blank"
+                >GitHub ↗</a
+              >）。
+            </li>
+          </ul>
+        </div>
 
         <div class="work-item">
           <div class="work-header">
